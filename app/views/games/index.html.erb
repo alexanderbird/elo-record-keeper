@@ -11,6 +11,17 @@
     </tr>
   </thead>
 
+
+  <thead>
+    <tr>
+      <th colspan=5>New Game: 
+<% GameType.all.each do |type| %>
+  <%= link_to type.name, new_game_path(game_type_id: type.id) %>
+<% end %>
+      </th>
+    </tr>
+  </thead>
+
   <tbody>
     <% @games.each do |game| %>
       <tr>

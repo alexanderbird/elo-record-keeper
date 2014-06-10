@@ -5,3 +5,39 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+GameType.destroy_all
+GameType.create(
+  name:               "One on One",
+  number_of_teams:    2,
+  players_per_team:   1,
+  )
+GameType.create(
+  name:               "Free for all 3",
+  number_of_teams:    3,
+  players_per_team:   1,
+  )
+GameType.create(
+  name:               "Free for all 4",
+  number_of_teams:    4,
+  players_per_team:   1,
+  )
+GameType.create(
+  name:               "Free for all 5",
+  number_of_teams:    5,
+  players_per_team:   1,
+  )
+GameType.create(
+  name:               "Two Headed Giant",
+  number_of_teams:    2,
+  players_per_team:   2,
+  )
+GameType.create(
+  name:               "Two Player",
+  number_of_teams:    2,
+  players_per_team:   1,
+  )
+GameType.create(
+  name:               "Old Skool - Team 2 on 2",
+  number_of_teams:    2,
+  players_per_team:   2,
+  )

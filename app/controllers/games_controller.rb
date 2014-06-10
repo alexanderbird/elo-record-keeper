@@ -14,7 +14,8 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
-    @game = Game.new
+    game_type = GameType.find params[:game_type_id]
+    @game = Game.new(game_type: game_type)
   end
 
   # GET /games/1/edit
