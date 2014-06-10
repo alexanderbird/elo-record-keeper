@@ -4,9 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Pro</th>
       <th>Rating</th>
-      <th>K factor</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,9 +15,7 @@
     <% @players.each do |player| %>
       <tr>
         <td><%= player.name %></td>
-        <td><%= player.pro %></td>
         <td><%= player.rating %></td>
-        <td><%= player.k_factor %></td>
         <td><%= link_to 'Show', player %></td>
         <td><%= link_to 'Edit', edit_player_path(player) %></td>
         <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>

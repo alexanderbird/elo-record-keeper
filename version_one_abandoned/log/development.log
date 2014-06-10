@@ -1,0 +1,1061 @@
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePlayers (20140528083723)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" decimal, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140528083723"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" decimal, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140528083723')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-28 02:43:18 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/railties-4.0.2/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 30ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:43:22 -0600
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players"
+  Rendered players/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 731ms (Views: 727.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:23 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:23 -0600
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:23 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:23 -0600
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:23 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:23 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:23 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:23 -0600
+
+
+Started GET "/players/new" for 127.0.0.1 at 2014-05-28 02:43:25 -0600
+Processing by PlayersController#new as HTML
+  Rendered players/_form.html.erb (26.4ms)
+  Rendered players/new.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2014-05-28 02:43:31 -0600
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vt8T7c0YOCm2B3MWHz6DqPTy3bIjmcOx453XxVs++GM=", "player"=>{"name"=>"Johnny Test"}, "commit"=>"Create Player"}
+  Rendered players/_form.html.erb (2.5ms)
+  Rendered players/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:31 -0600
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:31 -0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:31 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:31 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:31 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:31 -0600
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:31 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:31 -0600
+
+
+Started POST "/players" for 127.0.0.1 at 2014-05-28 02:43:33 -0600
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vt8T7c0YOCm2B3MWHz6DqPTy3bIjmcOx453XxVs++GM=", "player"=>{"name"=>"Johnny Test"}, "commit"=>"Create Player"}
+  Rendered players/_form.html.erb (1.7ms)
+  Rendered players/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:33 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:33 -0600
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:33 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:33 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:33 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:33 -0600
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:33 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:33 -0600
+
+
+Started POST "/players" for 127.0.0.1 at 2014-05-28 02:43:35 -0600
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vt8T7c0YOCm2B3MWHz6DqPTy3bIjmcOx453XxVs++GM=", "player"=>{"name"=>"Johnny Test"}, "commit"=>"Create Player"}
+  Rendered players/_form.html.erb (2.4ms)
+  Rendered players/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:35 -0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:35 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:35 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:35 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:35 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:35 -0600
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:35 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:35 -0600
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:43:40 -0600
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:40 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:40 -0600
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:40 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-28 02:43:40 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:40 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:40 -0600
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:40 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-28 02:43:40 -0600
+
+
+Started GET "/players/new" for 127.0.0.1 at 2014-05-28 02:43:42 -0600
+Processing by PlayersController#new as HTML
+  Rendered players/_form.html.erb (1.4ms)
+  Rendered players/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2014-05-28 02:44:00 -0600
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vt8T7c0YOCm2B3MWHz6DqPTy3bIjmcOx453XxVs++GM=", "player"=>{"name"=>"Johnny Test"}, "commit"=>"Create Player"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (5.9ms)[0m  [1mINSERT INTO "players" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 28 May 2014 08:44:00 UTC +00:00], ["name", "Johnny Test"], ["updated_at", Wed, 28 May 2014 08:44:00 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/players/1
+Completed 302 Found in 20ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/players/1" for 127.0.0.1 at 2014-05-28 02:44:00 -0600
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered players/show.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (uninitialized constant Player::Elo):
+    12: 
+    13: <p>
+    14:   <strong>Rating:</strong>
+    15:   <%= @player.rating %>
+    16: </p>
+    17: 
+    18: <p>
+  app/models/player.rb:4:in `rating'
+  app/views/players/show.html.erb:15:in `_app_views_players_show_html_erb___3657151905997755991_70251996055760'
+
+
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.9ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:45:23 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players"
+  Rendered players/index.html.erb within layouts/application (13.2ms)
+Completed 500 Internal Server Error in 53ms
+
+ActionView::Template::Error (cannot load such file -- elo/helper):
+    18:       <tr>
+    19:         <td><%= player.name %></td>
+    20:         <td><%= player.pro %></td>
+    21:         <td><%= player.rating %></td>
+    22:         <td><%= player.k_factor %></td>
+    23:         <td><%= link_to 'Show', player %></td>
+    24:         <td><%= link_to 'Edit', edit_player_path(player) %></td>
+  lib/elo.rb:1:in `<top (required)>'
+  app/models/player.rb:4:in `rating'
+  app/views/players/index.html.erb:21:in `block in _app_views_players_index_html_erb___584401091579458749_70178778521420'
+  app/views/players/index.html.erb:17:in `_app_views_players_index_html_erb___584401091579458749_70178778521420'
+
+
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.6ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:45:52 -0600
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/application (39.1ms)
+Completed 500 Internal Server Error in 45ms
+
+ActionView::Template::Error (cannot load such file -- elo/game):
+    18:       <tr>
+    19:         <td><%= player.name %></td>
+    20:         <td><%= player.pro %></td>
+    21:         <td><%= player.rating %></td>
+    22:         <td><%= player.k_factor %></td>
+    23:         <td><%= link_to 'Show', player %></td>
+    24:         <td><%= link_to 'Edit', edit_player_path(player) %></td>
+  lib/elo.rb:3:in `<top (required)>'
+  app/models/player.rb:4:in `rating'
+  app/views/players/index.html.erb:21:in `block in _app_views_players_index_html_erb___584401091579458749_70178778521420'
+  app/views/players/index.html.erb:17:in `_app_views_players_index_html_erb___584401091579458749_70178778521420'
+
+
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.4ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:46:45 -0600
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT "players".* FROM "players"
+  Rendered players/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (undefined method `config' for Elo:Module):
+    18:       <tr>
+    19:         <td><%= player.name %></td>
+    20:         <td><%= player.pro %></td>
+    21:         <td><%= player.rating %></td>
+    22:         <td><%= player.k_factor %></td>
+    23:         <td><%= link_to 'Show', player %></td>
+    24:         <td><%= link_to 'Edit', edit_player_path(player) %></td>
+  app/models/player.rb:4:in `rating'
+  app/views/players/index.html.erb:21:in `block in _app_views_players_index_html_erb___584401091579458749_70178778521420'
+  app/views/players/index.html.erb:17:in `_app_views_players_index_html_erb___584401091579458749_70178778521420'
+
+
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.3ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:47:41 -0600
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `config' for Elo:Module):
+    18:       <tr>
+    19:         <td><%= player.name %></td>
+    20:         <td><%= player.pro %></td>
+    21:         <td><%= player.rating %></td>
+    22:         <td><%= player.k_factor %></td>
+    23:         <td><%= link_to 'Show', player %></td>
+    24:         <td><%= link_to 'Edit', edit_player_path(player) %></td>
+  app/models/player.rb:4:in `rating'
+  app/views/players/index.html.erb:21:in `block in _app_views_players_index_html_erb___584401091579458749_70178778521420'
+  app/views/players/index.html.erb:17:in `_app_views_players_index_html_erb___584401091579458749_70178778521420'
+
+
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.5ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:47:42 -0600
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT "players".* FROM "players"
+  Rendered players/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `config' for Elo:Module):
+    18:       <tr>
+    19:         <td><%= player.name %></td>
+    20:         <td><%= player.pro %></td>
+    21:         <td><%= player.rating %></td>
+    22:         <td><%= player.k_factor %></td>
+    23:         <td><%= link_to 'Show', player %></td>
+    24:         <td><%= link_to 'Edit', edit_player_path(player) %></td>
+  app/models/player.rb:4:in `rating'
+  app/views/players/index.html.erb:21:in `block in _app_views_players_index_html_erb___584401091579458749_70178778521420'
+  app/views/players/index.html.erb:17:in `_app_views_players_index_html_erb___584401091579458749_70178778521420'
+
+
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.7ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:47:44 -0600
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `config' for Elo:Module):
+    18:       <tr>
+    19:         <td><%= player.name %></td>
+    20:         <td><%= player.pro %></td>
+    21:         <td><%= player.rating %></td>
+    22:         <td><%= player.k_factor %></td>
+    23:         <td><%= link_to 'Show', player %></td>
+    24:         <td><%= link_to 'Edit', edit_player_path(player) %></td>
+  app/models/player.rb:4:in `rating'
+  app/views/players/index.html.erb:21:in `block in _app_views_players_index_html_erb___584401091579458749_70178778521420'
+  app/views/players/index.html.erb:17:in `_app_views_players_index_html_erb___584401091579458749_70178778521420'
+
+
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.9ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:47:54 -0600
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT "players".* FROM "players"
+  Rendered players/index.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `config' for Elo:Module):
+    18:       <tr>
+    19:         <td><%= player.name %></td>
+    20:         <td><%= player.pro %></td>
+    21:         <td><%= player.rating %></td>
+    22:         <td><%= player.k_factor %></td>
+    23:         <td><%= link_to 'Show', player %></td>
+    24:         <td><%= link_to 'Edit', edit_player_path(player) %></td>
+  app/models/player.rb:4:in `rating'
+  app/views/players/index.html.erb:21:in `block in _app_views_players_index_html_erb___584401091579458749_70178778521420'
+  app/views/players/index.html.erb:17:in `_app_views_players_index_html_erb___584401091579458749_70178778521420'
+
+
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.8ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:47:55 -0600
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `config' for Elo:Module):
+    18:       <tr>
+    19:         <td><%= player.name %></td>
+    20:         <td><%= player.pro %></td>
+    21:         <td><%= player.rating %></td>
+    22:         <td><%= player.k_factor %></td>
+    23:         <td><%= link_to 'Show', player %></td>
+    24:         <td><%= link_to 'Edit', edit_player_path(player) %></td>
+  app/models/player.rb:4:in `rating'
+  app/views/players/index.html.erb:21:in `block in _app_views_players_index_html_erb___584401091579458749_70178778521420'
+  app/views/players/index.html.erb:17:in `_app_views_players_index_html_erb___584401091579458749_70178778521420'
+
+
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.2ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:48:05 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players"
+  Rendered players/index.html.erb within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 41ms
+
+ActionView::Template::Error (undefined method `cattr_accessor' for Elo:Module):
+    18:       <tr>
+    19:         <td><%= player.name %></td>
+    20:         <td><%= player.pro %></td>
+    21:         <td><%= player.rating %></td>
+    22:         <td><%= player.k_factor %></td>
+    23:         <td><%= link_to 'Show', player %></td>
+    24:         <td><%= link_to 'Edit', edit_player_path(player) %></td>
+  lib/elo.rb:11:in `<module:Elo>'
+  lib/elo.rb:4:in `<top (required)>'
+  app/models/player.rb:4:in `rating'
+  app/views/players/index.html.erb:21:in `block in _app_views_players_index_html_erb__4167370013223331720_70169193021240'
+  app/views/players/index.html.erb:17:in `_app_views_players_index_html_erb__4167370013223331720_70169193021240'
+
+
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.2ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:48:30 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players"
+  Rendered players/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 111ms (Views: 91.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-28 02:48:30 -0600
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-05-28 02:48:30 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-28 02:48:30 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-28 02:48:30 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-28 02:48:30 -0600
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-05-28 02:48:30 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-28 02:48:30 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-28 02:48:30 -0600
+
+
+Started DELETE "/players/1" for 127.0.0.1 at 2014-05-28 02:50:18 -0600
+Processing by PlayersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Vt8T7c0YOCm2B3MWHz6DqPTy3bIjmcOx453XxVs++GM=", "id"=>"1"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.3ms)[0m  [1mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/players
+Completed 302 Found in 15ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:50:18 -0600
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-28 02:50:18 -0600
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-05-28 02:50:18 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-28 02:50:18 -0600
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-05-28 02:50:18 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-28 02:50:18 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-28 02:50:18 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-28 02:50:18 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-28 02:50:18 -0600
+
+
+Started GET "/players/new" for 127.0.0.1 at 2014-05-28 02:50:19 -0600
+Processing by PlayersController#new as HTML
+  Rendered players/_form.html.erb (49.4ms)
+  Rendered players/new.html.erb within layouts/application (53.7ms)
+Completed 200 OK in 61ms (Views: 59.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2014-05-28 02:50:22 -0600
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vt8T7c0YOCm2B3MWHz6DqPTy3bIjmcOx453XxVs++GM=", "player"=>{"name"=>"Johnny Test"}, "commit"=>"Create Player"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "players" ("created_at", "name", "pro", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Wed, 28 May 2014 08:50:22 UTC +00:00], ["name", "Johnny Test"], ["pro", false], ["updated_at", Wed, 28 May 2014 08:50:22 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/players/2
+Completed 302 Found in 8ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/players/2" for 127.0.0.1 at 2014-05-28 02:50:22 -0600
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered players/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-28 02:50:22 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-28 02:50:22 -0600
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-05-28 02:50:22 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-28 02:50:22 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-28 02:50:22 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-28 02:50:22 -0600
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-05-28 02:50:22 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-28 02:50:22 -0600
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:50:25 -0600
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players"
+  Rendered players/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/players/new" for 127.0.0.1 at 2014-05-28 02:50:54 -0600
+Processing by PlayersController#new as HTML
+  Rendered players/_form.html.erb (2.0ms)
+  Rendered players/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 17ms (Views: 7.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2014-05-28 02:51:00 -0600
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vt8T7c0YOCm2B3MWHz6DqPTy3bIjmcOx453XxVs++GM=", "player"=>{"name"=>"Johnny Test B"}, "commit"=>"Create Player"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "players" ("created_at", "name", "pro", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Wed, 28 May 2014 08:51:00 UTC +00:00], ["name", "Johnny Test B"], ["pro", false], ["updated_at", Wed, 28 May 2014 08:51:00 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/players/3
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/players/3" for 127.0.0.1 at 2014-05-28 02:51:00 -0600
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered players/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-28 02:51:00 -0600
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-05-28 02:51:00 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-28 02:51:00 -0600
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-05-28 02:51:00 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-28 02:51:00 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-28 02:51:00 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-28 02:51:00 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-28 02:51:00 -0600
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:51:02 -0600
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/edit" for 127.0.0.1 at 2014-05-28 02:51:19 -0600
+Processing by PlayersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered players/_form.html.erb (3.9ms)
+  Rendered players/edit.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/players/2" for 127.0.0.1 at 2014-05-28 02:51:21 -0600
+Processing by PlayersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vt8T7c0YOCm2B3MWHz6DqPTy3bIjmcOx453XxVs++GM=", "player"=>{"name"=>"Johnny Test"}, "commit"=>"Update Player", "id"=>"2"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/players/2
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/players/2" for 127.0.0.1 at 2014-05-28 02:51:21 -0600
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered players/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-28 02:51:21 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-05-28 02:51:21 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-28 02:51:21 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-28 02:51:21 -0600
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-05-28 02:51:21 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-28 02:51:21 -0600
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-05-28 02:51:21 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-28 02:51:21 -0600
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:51:22 -0600
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/players/3" for 127.0.0.1 at 2014-05-28 02:51:25 -0600
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered players/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/players" for 127.0.0.1 at 2014-05-28 02:51:27 -0600
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  Rendered players/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to Game (20140528085841)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140528085841"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" decimal, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140528085841')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140528083723')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGames (20140528090014)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "type" varchar(255), "number_of_players" integer, "data" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140528090014"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "type" varchar(255), "number_of_players" integer, "data" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" decimal, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140528090014')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140528083723')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140528085841')
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateResults (20140528095210)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "results" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" decimal, "game_id" integer, "player_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140528095210"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "type" varchar(255), "number_of_players" integer, "data" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" decimal, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "results" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" decimal, "game_id" integer, "player_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140528095210')[0m
+  [1m[35m (1.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140528083723')
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140528085841')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140528090014')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangePlayer (20140528101744)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mCREATE TEMPORARY TABLE "aplayers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" decimal, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "players"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aplayers" ("id","name","pro","rating","k_factor","created_at","updated_at") VALUES (2, 'Johnny Test', 'f', NULL, NULL, '2014-05-28 08:50:22.253044', '2014-05-28 08:50:22.253044')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "aplayers" ("id","name","pro","rating","k_factor","created_at","updated_at") VALUES (3, 'Johnny Test B', 'f', NULL, NULL, '2014-05-28 08:51:00.568580', '2014-05-28 08:51:00.568580')
+  [1m[36m (0.8ms)[0m  [1mDROP TABLE "players"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" integer, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "aplayers"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "players" ("id","name","pro","rating","k_factor","created_at","updated_at") VALUES (2, 'Johnny Test', 'f', NULL, NULL, '2014-05-28 08:50:22.253044', '2014-05-28 08:50:22.253044')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "players" ("id","name","pro","rating","k_factor","created_at","updated_at") VALUES (3, 'Johnny Test B', 'f', NULL, NULL, '2014-05-28 08:51:00.568580', '2014-05-28 08:51:00.568580')[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "aplayers"
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140528101744"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "type" varchar(255), "number_of_players" integer, "data" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" integer, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "results" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" decimal, "game_id" integer, "player_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140528101744')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140528083723')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140528085841')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140528090014')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140528095210')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-09 21:14:49 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/railties-4.0.2/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 33ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2014-06-09 21:14:54 -0600
+Processing by GamesController#index as HTML
+  [1m[35mGame Load (1.7ms)[0m  SELECT "games".* FROM "games"
+  Rendered games/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 402ms (Views: 361.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-09 21:14:54 -0600
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-06-09 21:14:54 -0600
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-06-09 21:14:54 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-09 21:14:54 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-09 21:14:54 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-09 21:14:54 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-09 21:14:54 -0600
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-06-09 21:14:54 -0600
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-06-09 21:14:54 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-09 21:14:54 -0600
+
+
+Started GET "/games/new" for 127.0.0.1 at 2014-06-09 21:14:55 -0600
+Processing by GamesController#new as HTML
+  Rendered games/_form.html.erb (34.1ms)
+  Rendered games/new.html.erb within layouts/application (39.9ms)
+Completed 500 Internal Server Error in 45ms
+
+ActionView::Template::Error (undefined method `score' for #<Game:0x007fb50f85a518>):
+    29:   TODO: must be validated based on type specific regexp
+    30:   <div class="field">
+    31:     <%= f.label :score %><br>
+    32:     <%= f.text_field :score %>
+    33:   </div>
+    34:   <div class="actions">
+    35:     <%= f.submit %>
+  app/views/games/_form.html.erb:32:in `block in _app_views_games__form_html_erb___666630047183230674_70207797071660'
+  app/views/games/_form.html.erb:1:in `_app_views_games__form_html_erb___666630047183230674_70207797071660'
+  app/views/games/new.html.erb:3:in `_app_views_games_new_html_erb___14397215107027483_70207813147940'
+
+
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.9ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2014-06-09 21:14:56 -0600
+Processing by GamesController#new as HTML
+  Rendered games/_form.html.erb (8.5ms)
+  Rendered games/new.html.erb within layouts/application (10.4ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `score' for #<Game:0x007fb50adb2128>):
+    29:   TODO: must be validated based on type specific regexp
+    30:   <div class="field">
+    31:     <%= f.label :score %><br>
+    32:     <%= f.text_field :score %>
+    33:   </div>
+    34:   <div class="actions">
+    35:     <%= f.submit %>
+  app/views/games/_form.html.erb:32:in `block in _app_views_games__form_html_erb___666630047183230674_70207788332600'
+  app/views/games/_form.html.erb:1:in `_app_views_games__form_html_erb___666630047183230674_70207788332600'
+  app/views/games/new.html.erb:3:in `_app_views_games_new_html_erb___14397215107027483_70207788213220'
+
+
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Alex/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.7ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2014-06-09 21:15:14 -0600
+Processing by GamesController#new as HTML
+  Rendered games/_form.html.erb (10.0ms)
+  Rendered games/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 22ms (Views: 15.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-09 21:15:14 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-09 21:15:14 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-09 21:15:14 -0600
+
+
+Started GET "/assets/players.css?body=1" for 127.0.0.1 at 2014-06-09 21:15:14 -0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-09 21:15:14 -0600
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-06-09 21:15:14 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-09 21:15:14 -0600
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-06-09 21:15:14 -0600
+
+
+Started GET "/assets/players.js?body=1" for 127.0.0.1 at 2014-06-09 21:15:14 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-09 21:15:14 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGametypes (20140610032241)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "gametypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "number_of_teams" integer, "players_per_team" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.1ms)[0m  CREATE TEMPORARY TABLE "agames" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "type" varchar(255), "number_of_players" integer, "data" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.5ms)[0m  [1mSELECT * FROM "games"[0m
+  [1m[35m (0.7ms)[0m  DROP TABLE "games"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "type" gametype_id, "number_of_players" integer, "data" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "agames"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "agames"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140610032241"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "gametypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "number_of_teams" integer, "players_per_team" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" integer, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "results" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" decimal, "game_id" integer, "player_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140610032241')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140528083723')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140528085841')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140528090014')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140528095210')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140528101744')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangePlayers (20140610032809)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "players" ADD "team" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140610032809"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.7ms)[0m  [1mCREATE TABLE "gametypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "number_of_teams" integer, "players_per_team" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" integer, "k_factor" decimal, "created_at" datetime, "updated_at" datetime, "team" integer) 
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "results" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" decimal, "game_id" integer, "player_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140610032809')[0m
+  [1m[35m (1.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140528083723')
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140528085841')[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140528090014')
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140528095210')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140528101744')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140610032241')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to ChangePlayers (20140610032809)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  CREATE TEMPORARY TABLE "aplayers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" integer, "k_factor" decimal, "created_at" datetime, "updated_at" datetime, "team" integer) 
+  [1m[36m (0.6ms)[0m  [1mSELECT * FROM "players"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "aplayers" ("id","name","pro","rating","k_factor","created_at","updated_at","team") VALUES (2, 'Johnny Test', 'f', NULL, NULL, '2014-05-28 08:50:22.253044', '2014-05-28 08:50:22.253044', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aplayers" ("id","name","pro","rating","k_factor","created_at","updated_at","team") VALUES (3, 'Johnny Test B', 'f', NULL, NULL, '2014-05-28 08:51:00.568580', '2014-05-28 08:51:00.568580', NULL)[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "players"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" integer, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "aplayers"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "players" ("id","name","pro","rating","k_factor","created_at","updated_at") VALUES (2, 'Johnny Test', 'f', NULL, NULL, '2014-05-28 08:50:22.253044', '2014-05-28 08:50:22.253044')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "players" ("id","name","pro","rating","k_factor","created_at","updated_at") VALUES (3, 'Johnny Test B', 'f', NULL, NULL, '2014-05-28 08:51:00.568580', '2014-05-28 08:51:00.568580')
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "aplayers"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140610032809'
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateGametypes (20140610032241)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangePlayers (20140610032809)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "players" ADD "team" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140610032809"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateGames (20140610033414)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime, "gametype_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+SQLite3::SQLException: table "games" already exists: CREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime, "gametype_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePlayers (20140528083723)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" decimal, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140528083723"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Migrating to Game (20140528085841)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140528085841"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateResults (20140528095210)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "results" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" decimal, "game_id" integer, "player_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140528095210"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to ChangePlayer (20140528101744)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TEMPORARY TABLE "aplayers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" decimal, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "players"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "players"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" integer, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "aplayers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "aplayers"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140528101744"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateGametypes (20140610032241)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "gametypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "number_of_teams" integer, "players_per_team" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGametypes (20140610032241)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "gametypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "number_of_teams" integer, "players_per_team" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (2.6ms)[0m  rollback transaction
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePlayers (20140528083723)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" decimal, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140528083723"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Migrating to Game (20140528085841)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140528085841"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateGames (20140528095209)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime, "gametype_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140528095209"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateResults (20140528095210)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "results" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" decimal, "game_id" integer, "player_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140528095210"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to ChangePlayer (20140528101744)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TEMPORARY TABLE "aplayers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" decimal, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "players"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "players"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pro" boolean, "rating" integer, "k_factor" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "aplayers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "aplayers"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140528101744"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateGametypes (20140610032241)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "gametypes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "number_of_teams" integer, "players_per_team" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "agames" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime, "gametype_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "games"[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "games"
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m

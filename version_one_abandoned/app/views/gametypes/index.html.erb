@@ -1,0 +1,31 @@
+<h1>Listing gametypes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number of teams</th>
+      <th>Players per team</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gametypes.each do |gametype| %>
+      <tr>
+        <td><%= gametype.name %></td>
+        <td><%= gametype.number_of_teams %></td>
+        <td><%= gametype.players_per_team %></td>
+        <td><%= link_to 'Show', gametype %></td>
+        <td><%= link_to 'Edit', edit_gametype_path(gametype) %></td>
+        <td><%= link_to 'Destroy', gametype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gametype', new_gametype_path %>

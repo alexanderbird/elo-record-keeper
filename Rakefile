@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-EloRecordKeeper::Application.load_tasks
+MTGRecordKeeper::Application.load_tasks

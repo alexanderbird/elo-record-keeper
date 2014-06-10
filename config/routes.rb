@@ -1,4 +1,10 @@
-EloRecordKeeper::Application.routes.draw do
+MTGRecordKeeper::Application.routes.draw do
+  resources :game_types
+
+  resources :participations
+
+  resources :games
+
   resources :players
 
   # The priority is based upon order of creation: first created -> highest priority.

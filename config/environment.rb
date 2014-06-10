@@ -2,4 +2,4 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the Rails application.
-EloRecordKeeper::Application.initialize!
+MTGRecordKeeper::Application.initialize!

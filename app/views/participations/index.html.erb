@@ -1,0 +1,33 @@
+<h1>Listing participations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Player</th>
+      <th>Team number</th>
+      <th>Score</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @participations.each do |participation| %>
+      <tr>
+        <td><%= participation.game_id %></td>
+        <td><%= participation.player_id %></td>
+        <td><%= participation.team_number %></td>
+        <td><%= participation.score %></td>
+        <td><%= link_to 'Show', participation %></td>
+        <td><%= link_to 'Edit', edit_participation_path(participation) %></td>
+        <td><%= link_to 'Destroy', participation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Participation', new_participation_path %>
