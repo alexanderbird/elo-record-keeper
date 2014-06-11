@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
+    <%= f.text_field :date, class: "datepicker" %>
   </div>
   <div class="field">
     <%= f.label :gametype %><br>
@@ -26,27 +26,12 @@
 
 <p>Future form:</p>
 <%= form_tag "/games" do %>
-  <% cols = @game.game_type.number_of_teams %>
-  <% rows = @game.game_type.players_per_team %>
-  <table>
-  <tr>
-    <th></th>
-    <% cols.times do | number | %>
-      <th>
-        Team <%= number + 1 %>
-      </th>
-    <% end %>
-  </tr>
-  <% rows.times do | player | %>
-    <tr><td>Player <%= player + 1 %></td>
-      <% cols.times do | team | %>
-        <td>  
-          <%= search_field_tag "player[#{team}][#{player}]"%>
-        </td>
-      <% end %>
-    </tr>
-  <% end %> 
-  </table>
+  <%= render partial: "participants_table", locals: {
+    game: @game,
+    cell: Proc.new do |team, player|
+      search_field_tag "player[#{team}][#{player}]"
+    end}
+  %> 
   <div class="actions">
     <%= submit_tag "Save Results" %>
   </div>

@@ -1,0 +1,27 @@
+<% 
+header_prefix ||= "Team"
+row_prefix ||= "Player"
+table_class ||= "participants"
+cell ||= Proc.new do; end
+cols = game.game_type.number_of_teams
+rows = game.game_type.players_per_team
+%>
+<table>
+  <tr>
+    <th></th>
+    <% cols.times do | number | %>
+      <th>
+        Team <%= number + 1 %>
+      </th>
+    <% end %>
+  </tr>
+  <% rows.times do | player | %>
+    <tr><td>Player <%= player + 1 %></td>
+      <% cols.times do | team | %>
+        <td>  
+          <%= cell.call(team, player)%>
+        </td>
+      <% end %>
+    </tr>
+  <% end %> 
+</table>
