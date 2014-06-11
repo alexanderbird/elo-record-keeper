@@ -1,5 +1,3 @@
-<h1>New game</h1>
-
+<h2>Register <%= @game.game_type %> Results <small><small><%= link_to '(Cancel)', games_path %></small></small></h2>
 <%= render 'form' %>
 
-<%= link_to 'Back', games_path %>

@@ -1,40 +1,26 @@
 <h1>Listing games</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Gametype</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-
-  <thead>
-    <tr>
-      <th colspan=5>New Game: 
+<small><small><i>(Click to add new)</i></small></small>
 <% GameType.all.each do |type| %>
-  <%= link_to type.name, new_game_path(game_type_id: type.id) %>
+  <% games_of_this_type = @games.where(game_type_id: type.id) %>
+  <h2><%=link_to type, new_game_path(game_type_id: type.id)%></h2>
+  <% if games_of_this_type.count > 0%>
+    <%= render partial: "participants_table", locals: {
+      game_type: type,
+      games: games_of_this_type,
+      table_proc: Proc.new do 
+        "Date"
+      end,
+      game_proc: Proc.new do |game|
+        "#{link_to 'Edit', edit_game_path(game)} #{link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }}
+        |
+        #{game.date.strftime('%F')}"
+
+      end,
+      cell_proc: Proc.new do |team, player, game|
+        participation = game.participations.where(team_number: team.to_i)[player]
+        participation && "#{participation.player} [#{participation.score}]"
+      end
+    }%>
+  <% end %>
+  <hr>
 <% end %>
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= game.date %></td>
-        <td><%= game.gametype %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Game', new_game_path %>

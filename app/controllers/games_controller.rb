@@ -26,10 +26,17 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(game_params)
+    scores = params[:score].split("-")
+    params[:player].each do |team_number, players|
+      players.each do |player_name|
+        player = Player.find_by(name: player_name)
+        @game.participations << Participation.create(player: player, team_number: team_number.to_i, score: scores[team_number.to_i]) 
+      end
+    end
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
+        format.html { redirect_to games_url, notice: 'Game was successfully created.' }
         format.json { render action: 'show', status: :created, location: @game }
       else
         format.html { render action: 'new' }
@@ -43,7 +50,7 @@ class GamesController < ApplicationController
   def update
     respond_to do |format|
       if @game.update(game_params)
-        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
+        format.html { redirect_to games_url, notice: 'Game was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -70,6 +77,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:date, :gametype)
+      params.permit(:date, :game_type_id)
     end
 end

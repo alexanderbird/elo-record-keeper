@@ -1,23 +1,34 @@
 <% 
 table_class ||= "participants"
-cell ||= Proc.new do; end
-cols = game.game_type.number_of_teams
-rows = game.game_type.players_per_team
+cell_proc ||= Proc.new do; end
+game_proc ||= false
+table_proc ||= false
+cols = game_type.number_of_teams
+rows = game_type.players_per_team
+games ||= ["array_of_length_one"]
 %>
 <table class="<%=table_class%>">
   <tr>
+      <% if game_proc && table_proc %> <th><%= render inline: table_proc.call()%> </th> <% end %>
     <% cols.times do | number | %>
       <th>
-        <%= "#{game.team_descriptor} #{number + 1}" %>
+        <%= "#{game_type.team_descriptor} #{number + 1}" %>
       </th>
     <% end %>
   </tr>
-  <% rows.times do | player | %>
-      <% cols.times do | team | %>
-        <td>  
-          <%= cell.call(team, player)%>
-        </td>
-      <% end %>
-    </tr>
+  <% games.each do |game| %>
+    <% if game_proc %>
+      <tr><td rowspan="<%=rows%>">
+      <%= render inline: game_proc.call(game) %>
+      </td>
+    <% end %> 
+    <% rows.times do | player | %>
+        <% cols.times do | team | %>
+          <td>  
+            <%= cell_proc.call(team, player, game)%>
+          </td>
+        <% end %>
+      </tr>
+    <% end %> 
   <% end %> 
 </table>

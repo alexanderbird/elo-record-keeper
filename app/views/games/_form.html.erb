@@ -1,4 +1,5 @@
-<%= form_for(@game) do |f| %>
+<%= form_tag games_path do %>
+
   <% if @game.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
@@ -12,23 +13,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :date %><br>
-    <%= f.text_field :date, class: "datepicker" %>
+    <%= label_tag :date %><br>
+    <%= text_field_tag :date, nil, class: "datepicker" %>
   </div>
-  <div class="field">
-    <%= f.label :gametype %><br>
-    <%= @game.game_type.name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
 
-<p>Future form:</p>
-<%= form_tag "/games" do %>
+  <input type="hidden" name="game_type_id" value="<%=@game.game_type_id%>"/>
+
+  <div class="field">
+    <%= label_tag "Score (#{@game.game_type.score_string_help_text})" %><br>
+    <%= text_field_tag :score%>
+  </div>
+
   <%= render partial: "participants_table", locals: {
-    game: @game,
-    cell: Proc.new do |team, player|
+    game_type: @game.game_type,
+    cell_proc: Proc.new do |team, player|
       search_field_tag "player[#{team}][#{player}]"
     end}
   %> 
