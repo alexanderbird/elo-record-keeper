@@ -77,4 +77,11 @@ MTGRecordKeeper::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Poor man's authentication: 
+  # change this value to a secret key
+  # it will prefix every url
+  config.secret_url = "changemeplease"
+
+
 end

@@ -1,11 +1,18 @@
 MTGRecordKeeper::Application.routes.draw do
-  resources :game_types
+  secret = MTGRecordKeeper::Application.config.secret_url
+  if Rails.env.development?
+    root "application#redirect_to_games" 
+  else
+    root "application#not_authorized"
+  end
 
-  resources :participations
-
-  resources :games
-
-  resources :players
+  scope secret do
+    get "/" => "application#redirect_to_games"
+    resources :game_types
+    resources :participations
+    resources :games
+    resources :players
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
