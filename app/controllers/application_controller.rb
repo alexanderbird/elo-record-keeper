@@ -6,12 +6,19 @@ class ApplicationController < ActionController::Base
   def redirect_to_games
     redirect_to games_url
   end
+  
   def not_authorized
   end
+  
+  private
   def set_config_hash
     @config = MTGRecordKeeper::Application.config.customization
     @config ||= HashWithIndifferentAccess.new
   rescue
     @config ||= HashWithIndifferentAccess.new
+  end
+
+  def default_url_options
+    {use_api: params[:use_api]}
   end
 end

@@ -6,12 +6,11 @@ MTGRecordKeeper::Application.routes.draw do
     root "application#not_authorized"
   end
 
-  scope secret do
+  scope secret + "(/:use_api)/", use_api: /api/ do
     get "/" => "application#redirect_to_games"
-    resources :game_types
-    resources :participations
-    resources :games
-    resources :players
+    resources :game_types, except: [:destroy]
+    resources :games, except: [:edit, :destroy, :show]
+    resources :players, except: [:destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

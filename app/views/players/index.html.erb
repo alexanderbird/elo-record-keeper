@@ -1,4 +1,4 @@
-<h1>Listing players</h1>
+<h1>All Players</h1>
 
 <table>
   <thead>
@@ -7,18 +7,21 @@
       <th>Rating</th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
+    <tr>
+      <td colspan=4>
+        <%= link_to 'New Player', new_player_path %>
+      </td>
+    </tr>
     <% @players.each do |player| %>
       <tr>
         <td><%= player.name %></td>
         <td><%= player.rating %></td>
         <td><%= link_to 'Show', player %></td>
         <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +29,3 @@
 
 <br>
 
-<%= link_to 'New Player', new_player_path %>

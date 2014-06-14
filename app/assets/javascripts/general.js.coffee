@@ -1,10 +1,10 @@
 ready = ->
   options = $("#page-data").data('players')
-  $("input[type=search").autocomplete({source: options, autoFocus: true, messages: {noResults: "", results: ->}})
-  $("input[type=search").attr("autocomplete", "on")
+  $("input[type=search]").autocomplete({source: options, autoFocus: true, messages: {noResults: "", results: ->}})
+  $("input[type=search]").attr("autocomplete", "off")
 
 
-  $("input.datepicker").datepicker()
+  $("input.datepicker").datepicker({dateFormat: "yy/mm/dd"})
   $('#ui-datepicker-div').css('display','none');
   $("input.datepicker").datepicker('setDate', new Date())
 

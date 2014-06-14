@@ -32,11 +32,6 @@ GameType.create(
   players_per_team:   2,
   )
 GameType.create(
-  name:               "Two Player",
-  number_of_teams:    2,
-  players_per_team:   1,
-  )
-GameType.create(
   name:               "Old Skool - Team 2 on 2",
   number_of_teams:    2,
   players_per_team:   2,

@@ -1,4 +1,4 @@
-<h1>Listing game_types</h1>
+<h1>Available Game Types</h1>
 
 <table>
   <thead>
@@ -8,11 +8,15 @@
       <th>Players per team</th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
+    <tr>
+      <td colspan=5>
+        <%= link_to 'New Game type', new_game_type_path %>
+      </td>
+    </tr>
     <% @game_types.each do |game_type| %>
       <tr>
         <td><%= game_type.name %></td>
@@ -20,7 +24,6 @@
         <td><%= game_type.players_per_team %></td>
         <td><%= link_to 'Show', game_type %></td>
         <td><%= link_to 'Edit', edit_game_type_path(game_type) %></td>
-        <td><%= link_to 'Destroy', game_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +31,3 @@
 
 <br>
 
-<%= link_to 'New Game type', new_game_type_path %>

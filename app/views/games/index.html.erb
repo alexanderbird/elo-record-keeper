@@ -1,5 +1,5 @@
-<h1>Listing games</h1>
-<small><small><i>(Click to add new)</i></small></small>
+<h1>Game History</h1>
+<small><small><i>(Click on a game type title to record new results)</i></small></small>
 <% GameType.all.each do |type| %>
   <% games_of_this_type = @games.where(game_type_id: type.id) %>
   <h2><%=link_to type, new_game_path(game_type_id: type.id)%></h2>
@@ -11,9 +11,7 @@
         "Date"
       end,
       game_proc: Proc.new do |game|
-        "#{link_to 'Edit', edit_game_path(game)} #{link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }}
-        |
-        #{game.date.strftime('%F')}"
+        game.date.strftime('%F')
 
       end,
       cell_proc: Proc.new do |team, player, game|
