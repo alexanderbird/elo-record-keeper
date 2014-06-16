@@ -35,6 +35,8 @@ end
 
 group :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails', "~> 4.4"
+  gem 'database_cleaner', '< 1.1.0'
 end
 gem 'pry-rails'
 # Use ActiveModel has_secure_password

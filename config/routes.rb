@@ -1,5 +1,9 @@
 MTGRecordKeeper::Application.routes.draw do
-  secret = MTGRecordKeeper::Application.config.secret_url
+  begin
+    secret = MTGRecordKeeper::Application.config.secret_url
+  rescue 
+    secret = "set_config_dot_secret_url_to_enable_authentication"
+  end
   if Rails.env.development?
     root "application#redirect_to_games" 
   else

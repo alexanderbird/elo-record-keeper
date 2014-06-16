@@ -27,7 +27,7 @@
   <%= render partial: "participants_table", locals: {
     game_type: @game.game_type,
     cell_proc: Proc.new do |team, player|
-      search_field_tag "player[#{team}][#{player}]"
+      search_field_tag "player[#{team}][#{player}]", @game.participations.where(team_number: team)[player]
     end}
   %> 
   <div class="actions">

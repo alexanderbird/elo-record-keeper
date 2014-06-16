@@ -4,7 +4,7 @@ elo-record-keeper
 Rails application for keeping track of game results. Players' relative scores are calculated using the elo rating system. 
 Project tracking on Jira
 ------------------------
-Want to participate? Head over to [Jira](https://mtg-rank.atlassian.net/issues/?jql=ORDER%20BY%20fixVersion%20ASC) to see a list of outstanding tasks.
+Want to participate? Head over to [Jira](https://mtg-rank.atlassian.net/issues/?filter=10101) to see a list of outstanding tasks.
 
 Thanks To
 ---------

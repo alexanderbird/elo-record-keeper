@@ -30,7 +30,10 @@ class GamesController < ApplicationController
     params[:player].each do |team_number, players|
       players.each do |player_name|
         player = Player.find_by(name: player_name)
-        @game.participations << Participation.create(player: player, team_number: team_number.to_i, score: scores[team_number.to_i]) 
+        participation = Participation.create(player: player, team_number: team_number.to_i, score: scores[team_number.to_i]) 
+        if participation.valid?
+          @game.participations << participation 
+        end
       end
     end
 
